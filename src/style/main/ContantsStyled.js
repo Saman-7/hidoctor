@@ -24,6 +24,18 @@ export const ContentContainer = styled.main`
       color: #0a3380;
     }
   }
+
+  @media (max-width: 992px) {
+    & .boxes {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    & .boxes {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
 `;
 
 export const Box = styled.div`
