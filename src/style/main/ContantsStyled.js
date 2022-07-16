@@ -30,12 +30,11 @@ export const Box = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 350px;
+  max-width: 350px;
   height: 450px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   overflow: hidden;
-  padding: 10px;
   color: black;
   cursor: pointer;
   transition: 0.5s;
@@ -49,6 +48,7 @@ export const Box = styled.div`
 
   & img {
     max-width: 100%;
+    height: 50%;
     transition: 0.5s;
   }
 
@@ -59,11 +59,12 @@ export const Box = styled.div`
   & h1 {
     font-size: 16px;
     font-weight: 600;
-    margin: 15px 0px;
+    margin: 20px 0px;
   }
   & p {
     font-size: 13px;
     line-height: normal;
+    padding: 0px 20px;
   }
 
   & a {
