@@ -6,6 +6,10 @@ export const FooterContainer = styled.footer`
   justify-content: space-around;
   align-items: center;
   padding: 30px;
+
+  @media (max-width: 786px) {
+    flex-direction: column;
+  }
 `;
 
 export const RightFooter = styled.ul`
@@ -18,6 +22,9 @@ export const RightFooter = styled.ul`
     margin-bottom: 10px;
     border-right: 5px solid #35ebff;
     padding-right: 10px;
+  }
+  @media (max-width: 1200px) {
+    display: none;
   }
 `;
 
@@ -54,5 +61,13 @@ export const LeftFooter = styled.ul`
     position: absolute;
     bottom: -50px;
     left: 0;
+  }
+
+  @media (max-width: 1200px) {
+    padding: 0px 20px;
+  }
+
+  @media (max-width: 786px) {
+    margin-bottom: 100px;
   }
 `;
