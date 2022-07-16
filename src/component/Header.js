@@ -1,10 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Logo from "../img/logo.png";
 import { HeaderContainer, Left, Right } from "../style/HeaderStyled";
 import { ReactComponent as SearchLogo } from "../svg/search.svg";
+import { ReactComponent as CloseLogo } from "../svg/close.svg";
+import { ReactComponent as MenuLogo } from "../svg/menu.svg";
 
 const Header = () => {
   const ref = useRef();
+  const refRight = useRef();
+
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -16,10 +21,22 @@ const Header = () => {
     });
   }, []);
 
+  const handleMenu = () => {
+    if (isOpen) {
+      refRight.current.classList.remove("active");
+    } else {
+      refRight.current.classList.add("active");
+    }
+    setIsOpen((isOpen) => !isOpen);
+  };
+
   return (
     <HeaderContainer ref={ref}>
       <img src={Logo} alt="logo" />
-      <Right>
+
+      <MenuLogo className="menu" onClick={handleMenu} />
+      <Right ref={refRight}>
+        <CloseLogo className="close" onClick={handleMenu} />
         <li>
           <a href="/">صفحه اصلی</a>
         </li>
