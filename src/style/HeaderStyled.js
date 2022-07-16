@@ -4,13 +4,18 @@ export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: yellow;
   padding: 15px 0px;
-  background-color: #35ebff;
+  background-color: #e0ffff;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1000;
+  transition: 0.5s;
+
+  &.scroll {
+    background-color: #35ebff;
+  }
 `;
 
 export const Right = styled.nav`
@@ -65,11 +70,14 @@ export const Left = styled.div`
     font-family: iransans;
     font-size: 13px;
     font-weight: 600;
-    background-color: #ffba00;
+    background-color: #007fff;
     cursor: pointer;
+    color: #e0ffff;
   }
+
   & button:hover {
-    background-color: #fd5800;
+    background-color: #000080;
+    color: #ffb300;
   }
 
   & label {

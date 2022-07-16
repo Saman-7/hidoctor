@@ -1,10 +1,23 @@
+import { useEffect, useRef } from "react";
 import Logo from "../img/logo.png";
 import { HeaderContainer, Left, Right } from "../style/HeaderStyled";
 import { ReactComponent as SearchLogo } from "../svg/search.svg";
 
 const Header = () => {
+  const ref = useRef();
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY >= 80) {
+        ref.current.classList.add("scroll");
+      } else {
+        ref.current.classList.remove("scroll");
+      }
+    });
+  }, []);
+
   return (
-    <HeaderContainer>
+    <HeaderContainer ref={ref}>
       <img src={Logo} alt="logo" />
       <Right>
         <li>
